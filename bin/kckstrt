@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'kckstrt'
+
+exit Kckstrt.run(ARGV)
