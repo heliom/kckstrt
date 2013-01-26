@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'gli'
+require 'ext/string'
 require 'kckstrt/version'
 require 'highline/import'
 
@@ -27,8 +28,10 @@ module Kckstrt
   def self.generate_app(app_name, forced)
     return say('Please specify an app name. See `kckstrt generate --help`.') unless app_name
 
-    mkdir(app_name, forced)
-    copy_templates(app_name)
+    dirname = app_name.underscore
+
+    mkdir(dirname, forced)
+    copy_templates(dirname)
   end
 
   def self.mkdir(dirname, forced)
