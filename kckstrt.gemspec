@@ -20,6 +20,7 @@ spec = Gem::Specification.new do |s|
   s.executables << 'kckstrt'
 
   s.require_paths << 'lib'
+  s.add_dependency('highline', '~> 1.6.15')
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec', '~> 2.12.0')
   s.add_development_dependency('rspec-mocks', '~> 2.12.0')
