@@ -11,19 +11,13 @@ module Kckstrt
   program_desc 'Sinatra app generator'
   version Kckstrt::VERSION
 
-  desc 'Force generation'
-  switch [:f, :force]
-
   desc 'Generate an app'
   command :generate do |c|
     c.desc 'Force generation'
     c.switch [:f, :force]
 
     c.action do |global_options, options, args|
-      @options = {
-        forced: global_options[:force] || options[:force]
-      }
-
+      @options = options
       generate_app(args.first)
     end
   end
@@ -39,7 +33,7 @@ module Kckstrt
   end
 
   def self.mkdir(dirname)
-    return say("“#{dirname}” folder is not empty. Use the --force flag to overwrite.") if File.directory?(dirname) && !@options[:forced]
+    return say("“#{dirname}” folder is not empty. Use the --force flag to overwrite.") if File.directory?(dirname) && !@options[:force]
 
     FileUtils.rm_rf(dirname)
     Dir.mkdir(dirname)
