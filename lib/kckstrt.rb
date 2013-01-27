@@ -1,9 +1,9 @@
 # encoding: utf-8
 
 require 'gli'
-require 'ext/string'
 require 'kckstrt/version'
 require 'highline/import'
+require 'active_support/core_ext/string/inflections'
 
 module Kckstrt
   extend GLI::App
@@ -28,10 +28,11 @@ module Kckstrt
   def self.generate_app(app_name, forced)
     return say('Please specify an app name. See `kckstrt generate --help`.') unless app_name
 
-    dirname = app_name.underscore
+    @dirname = app_name.underscore
+    @app_name = @dirname.camelize
 
-    mkdir(dirname, forced)
-    copy_templates(dirname)
+    mkdir(@dirname, forced)
+    copy_templates(@dirname)
   end
 
   def self.mkdir(dirname, forced)
