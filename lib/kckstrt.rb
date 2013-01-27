@@ -20,23 +20,26 @@ module Kckstrt
     c.switch [:f, :force]
 
     c.action do |global_options, options, args|
-      forced = global_options[:force] || options[:force]
-      generate_app(args.first, forced)
+      @options = {
+        forced: global_options[:force] || options[:force]
+      }
+
+      generate_app(args.first)
     end
   end
 
-  def self.generate_app(app_name, forced)
+  def self.generate_app(app_name)
     return say('Please specify an app name. See `kckstrt generate --help`.') unless app_name
 
     @dirname = app_name.underscore
     @app_name = @dirname.camelize
 
-    mkdir(@dirname, forced)
+    mkdir(@dirname)
     copy_templates(@dirname)
   end
 
-  def self.mkdir(dirname, forced)
-    return say("“#{dirname}” folder is not empty. Use the --force flag to overwrite.") if File.directory?(dirname) && !forced
+  def self.mkdir(dirname)
+    return say("“#{dirname}” folder is not empty. Use the --force flag to overwrite.") if File.directory?(dirname) && !@options[:forced]
 
     FileUtils.rm_rf(dirname)
     Dir.mkdir(dirname)
