@@ -13,6 +13,11 @@ map '/assets' do
   Stylus.setup Assets
   Stylus.nib = true
 
+  if ENV['RACK_ENV'] != 'development'
+    Assets.js_compressor = Uglifier.new(mangle: true)
+    Stylus.compress = true
+  end
+
   run Assets
 end
 
