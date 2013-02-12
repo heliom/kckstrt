@@ -1,6 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
-class {{ @app_name }}::App < Sinatra::Base
+class {{ app_name }}::App < Sinatra::Base
   set :root, File.expand_path('../../app',  __FILE__)
   set :public_folder, File.expand_path('../../public',  __FILE__)
   set :erb, :layout => :'layouts/application'

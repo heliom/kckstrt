@@ -1,4 +1,4 @@
-class {{ @app_name }}::App < Sinatra::Base
+class {{ app_name }}::App < Sinatra::Base
   # Filters
   before do
     if request.path.match /.+\/$/
