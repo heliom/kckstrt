@@ -52,7 +52,7 @@ module Kckstrt
   def self.init_templates
     Dir["#{@dirname}/**/*.template"].each do |file|
       template = File.read(file)
-      content = template.gsub(/\{\{ app_name \}\}/, @app_name)
+      content = Erubis::Eruby.new(template, pattern: '{{ }}').result(binding)
 
       File.open(file, 'w+') do |f|
         f.write(content)

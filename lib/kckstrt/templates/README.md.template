@@ -1,4 +1,4 @@
-# {{ app_name }}
+# {{= @app_name }}
 
 ## Setup
 Run `script/setup` for a one-step complete installation.

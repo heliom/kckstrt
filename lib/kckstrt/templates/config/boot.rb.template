@@ -6,7 +6,7 @@ if defined? Bundler
   Bundler.require :default, :assets, ENV['RACK_ENV']
 end
 
-module {{ app_name }}; end
+module {{= @app_name }}; end
 
 # Require helper & lib files
 def recursive_require(basepath)

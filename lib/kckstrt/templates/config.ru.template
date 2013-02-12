@@ -23,5 +23,5 @@ end
 
 # Main application
 map '/' do
-  run {{ app_name }}::App
+  run {{= @app_name }}::App
 end
