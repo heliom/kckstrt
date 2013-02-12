@@ -3,7 +3,7 @@
 
 Generate a Sinatra app in 4 easy steps:
 
-```sh
+```
 kckstrt generate MyApp
 cd my_app
 script/setup
