@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'gli'
+require 'fileutils'
 require 'kckstrt/version'
 require 'highline/import'
 require 'active_support/core_ext/string/inflections'
