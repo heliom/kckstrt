@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+# Git
+puts '=> Setuping Git'
+`git init`
+
+# Git submodules
+puts '=> Adding Stylus-Utils [Submodule]'
+`git submodule add https://github.com/heliom/stylus-utils.git app/assets/stylesheets/utils`
+
+puts '=> Adding Nib [Submodule]'
+`git submodule add https://github.com/visionmedia/nib.git node_modules/nib`
+
+puts '=> Initializing Submodules'
+`git submodule init && git submodule update`
+
+# Bundler
+puts '=> Installing Gems'
+`bundle install`
+
+puts '=> Done'
