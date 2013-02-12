@@ -5,7 +5,7 @@ spec = Gem::Specification.new do |s|
   s.name = 'kckstrt'
   s.author = 'Etienne Lemay'
   s.email = 'etienne@heliom.ca'
-  s.homepage = 'https://github.com/EtienneLem/kckstrt'
+  s.homepage = 'https://github.com/heliom/kckstrt'
   s.summary = 'Sinatra app generator'
 
   s.version = Kckstrt::VERSION
