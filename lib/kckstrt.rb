@@ -30,6 +30,9 @@ module Kckstrt
 
     mkdir(@dirname)
     copy_templates(@dirname)
+    init_templates(@app_name)
+
+    say("=> cd #{@dirname} && script/setup")
   end
 
   def self.mkdir(dirname)
@@ -42,5 +45,18 @@ module Kckstrt
   def self.copy_templates(dest)
     src = File.expand_path('../kckstrt/templates', __FILE__)
     FileUtils.copy_entry(src, dest)
+  end
+
+  def self.init_templates(app_name)
+    Dir["#{@dirname}/**/*.template"].each do |file|
+      template = File.read(file)
+      content = template.gsub(/\{\{ @app_name \}\}/, @app_name)
+
+      File.open(file, 'w+') do |f|
+        f.write(content)
+      end
+
+      File.rename(file, file.sub('.template', ''))
+    end
   end
 end

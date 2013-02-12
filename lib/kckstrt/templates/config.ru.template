@@ -23,5 +23,5 @@ end
 
 # Main application
 map '/' do
-  run Kckstrt::App
+  run {{ @app_name }}::App
 end

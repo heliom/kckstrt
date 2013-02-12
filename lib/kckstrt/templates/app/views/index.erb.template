@@ -1,2 +1,2 @@
-<h1>Kckstrt</h1>
+<h1>{{ @app_name }}</h1>
 <p>Find me in <i>app/views/index.erb</i></p>
