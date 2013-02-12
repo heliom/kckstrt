@@ -1,6 +1,9 @@
 # Kckstrt
 
-## Helpers
+## Setup
+Run `script/setup` for a one-step complete installation.
+
+## Asset Helpers
 ### `asset_path`
 ```erb
 <img src="<%= asset_path 'kckstrt.png' %>" alt="Kckstrt">
@@ -22,13 +25,33 @@
 </body>
 ```
 
-## Environments Setup
-### Development
-- [Sprockets][]
+--
+### `inline_script_tag`
+```erb
+<%= inline_script_tag :scripts %>
+<%# => <script>console.log('content of scripts.js')</script> %>
+```
+
+## Deployment
+This app is [Heroku][]-ready.<br>
+Don’t forget to set the `ENV['ASSET_HOST']` environment variable. We strongly suggest using [Amazon CloudFront][CloudFront] for a plug and play CDN host. Otherwise you’ll have to pre-compile your assets. Such script isn’t included.
+
+### Staging
+```sh
+rake deploy:staging
+```
+Push `dev` to `origin/dev` & `staging/master`
 
 ### Production
-- Blissfully serves assets via [CloudFront][]
-  - Compile once with sprockets on demand (first HTTP request on the asset).
+```sh
+rake deploy:production
+```
+Push `master` to `origin/master` & `production/master`
 
-[Sprockets]: https://github.com/sstephenson/sprockets
-[CloudFront]: http://aws.amazon.com/cloudfront/
+## Credits
+[Rafael][rafBM] & [Etienne][EtienneLem]
+
+[Heroku]: http://www.heroku.com
+[CloudFront]: http://aws.amazon.com/cloudfront
+[rafBM]: https://github.com/rafBM
+[EtienneLem]: https://github.com/EtienneLem
