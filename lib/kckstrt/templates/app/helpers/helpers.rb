@@ -6,7 +6,7 @@ def asset_path(file_name)
     file_name = Assets[file_name].digest_path
   end
 
-  "/assets/#{file_name}"
+  "#{asset_host}/assets/#{file_name}"
 end
 
 def dependencies_paths(file_name)
@@ -19,15 +19,19 @@ end
 
 def javascript_include_tag(file_name)
   file_name = "#{file_name}.js"
-  dependencies_paths(file_name).map { |path| %(<script src="/assets/#{path}"></script>) }.join
+  dependencies_paths(file_name).map { |path| %(<script src="#{asset_host}/assets/#{path}"></script>) }.join
 end
 
 def stylesheet_link_tag(file_name)
   file_name = "#{file_name}.css"
-  dependencies_paths(file_name).map { |path| %(<link rel="stylesheet" href="/assets/#{path}">) }.join
+  dependencies_paths(file_name).map { |path| %(<link rel="stylesheet" href="#{asset_host}/assets/#{path}">) }.join
 end
 
 def inline_script_tag(file_name)
   file_name = "#{file_name}.js"
   '<script>' + Assets[file_name].source + '</script>'
+end
+
+def asset_host
+  ENV['ASSET_HOST'] || ''
 end
