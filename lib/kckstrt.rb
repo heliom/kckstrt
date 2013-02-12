@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'gli'
+require 'erubis'
 require 'fileutils'
 require 'kckstrt/version'
 require 'highline/import'
