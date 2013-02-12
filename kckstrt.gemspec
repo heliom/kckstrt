@@ -11,7 +11,7 @@ spec = Gem::Specification.new do |s|
   s.version = Kckstrt::VERSION
   s.platform = Gem::Platform::RUBY
 
-  s.files = %w(CONTRIBUTING.md LICENSE.md README.md Rakefile kckstrt.gemspec)
+  s.files = %w(LICENSE.md README.md Rakefile kckstrt.gemspec)
   s.files += Dir.glob("lib/**/*.rb")
   s.files += Dir.glob("bin/**/*")
   s.files += Dir.glob("etc/**/*")
