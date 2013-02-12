@@ -35,3 +35,14 @@ end
 def asset_host
   ENV['ASSET_HOST'] || ''
 end
+
+# View helpers
+def partial(partial, locals={})
+  partial_view = "partials/_#{partial}".to_sym
+  erb partial_view, :layout => false, locals: locals
+end
+
+# URL helpers
+def home_path
+  '/'
+end
