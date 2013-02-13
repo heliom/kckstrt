@@ -20,6 +20,5 @@ group :assets do
   gem 'sprockets'
   gem 'coffee-script'
   gem 'stylus', '~> 0.7.1', :require => 'stylus/sprockets'
-  gem 'yui-compressor', :require => 'yui/compressor'
   gem 'uglifier'
 end
