@@ -3,8 +3,8 @@ require File.join([File.dirname(__FILE__),'lib','kckstrt','version.rb'])
 
 spec = Gem::Specification.new do |s|
   s.name = 'kckstrt'
-  s.author = 'Etienne Lemay'
-  s.email = 'etienne@heliom.ca'
+  s.authors = ['Etienne Lemay', 'Rafael Blais-Masson']
+  s.email = 'fellowship@heliom.ca'
   s.homepage = 'https://github.com/heliom/kckstrt'
   s.summary = 'Sinatra app generator'
 
