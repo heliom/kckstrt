@@ -29,4 +29,4 @@ foreman start
 [helpers]: lib/kckstrt/templates/app/helpers/helpers.rb
 [rafBM]: https://github.com/rafBM
 [EtienneLem]: https://github.com/EtienneLem
-[LICENSE]: LICENSE.md
+[LICENSE]: ./LICENSE.md
