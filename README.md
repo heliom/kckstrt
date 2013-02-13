@@ -10,6 +10,8 @@ script/setup
 foreman start
 ```
 
+See a generated app example: [kckstrt-hello-world][helloworld]
+
 ## Features
 - [Heroku]-ready
 - One-step [installation script][installation]
@@ -22,6 +24,7 @@ foreman start
 ## Copyright
 © 2012 Heliom. See [LICENSE][] for details.
 
+[helloworld]: https://github.com/heliom/kckstrt-hello-world
 [Heroku]: http://www.heroku.com
 [installation]: lib/kckstrt/templates/script/setup
 [Stylus]: https://github.com/learnBoost/stylus
