@@ -17,9 +17,12 @@ module Kckstrt
   command :generate do |c|
     c.desc 'Force generation'
     c.switch [:f, :force]
+    c.flag [:d, :directory], default_value: '.'
 
     c.action do |global_options, options, args|
       @options = options
+      @options[:directory].sub!(/\/$/, '')
+
       generate_app(args.first)
     end
   end
@@ -27,8 +30,8 @@ module Kckstrt
   def self.generate_app(app_name)
     return say('Please specify an app name. See `kckstrt generate --help`.') unless app_name
 
-    @dirname = app_name.underscore
-    @app_name = @dirname.camelize
+    @dirname = "#{@options[:directory]}/#{app_name.underscore}"
+    @app_name = app_name.underscore.camelize
 
     mkdir(@dirname)
     copy_templates(@dirname)
