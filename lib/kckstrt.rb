@@ -5,7 +5,7 @@ require 'erubis'
 require 'fileutils'
 require 'kckstrt/version'
 require 'highline/import'
-require 'active_support/core_ext/string/inflections'
+require 'ext/string'
 
 module Kckstrt
   extend GLI::App

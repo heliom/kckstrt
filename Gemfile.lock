@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     kckstrt (0.0.4)
-      activesupport (~> 3.2.11)
       erubis (~> 2.7.0)
       gli (= 2.5.2)
       highline (~> 1.6.15)
@@ -10,15 +9,10 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (3.2.12)
-      i18n (~> 0.6)
-      multi_json (~> 1.0)
     diff-lcs (1.2.1)
     erubis (2.7.0)
     gli (2.5.2)
     highline (1.6.15)
-    i18n (0.6.4)
-    multi_json (1.6.1)
     rake (10.0.3)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)

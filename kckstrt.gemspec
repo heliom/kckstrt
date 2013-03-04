@@ -22,7 +22,6 @@ spec = Gem::Specification.new do |s|
   s.require_paths << 'lib'
   s.add_dependency('erubis', '~> 2.7.0')
   s.add_dependency('highline', '~> 1.6.15')
-  s.add_dependency('activesupport', '~> 3.2.11')
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec', '~> 2.13.0')
   s.add_runtime_dependency('gli', '2.5.2')
