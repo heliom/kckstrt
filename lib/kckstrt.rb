@@ -33,18 +33,25 @@ module Kckstrt
     @dirname = "#{@options[:directory]}/#{app_name.underscore}"
     @app_name = app_name.underscore.camelize
 
-    mkdir(@dirname)
-    copy_templates(@dirname)
-    init_templates
+    return say("Invalid application name #{@app_name}. Please give a name which does not start with numbers.") if /^\d/.match(@app_name)
 
-    say("=> cd #{@dirname} && script/setup")
+    if mkdir(@dirname)
+      copy_templates(@dirname)
+      init_templates
+
+      say("=> cd #{@dirname} && script/setup")
+    end
   end
 
   def self.mkdir(dirname)
-    return say("“#{dirname}” folder is not empty. Use the --force flag to overwrite.") if File.directory?(dirname) && !@options[:force]
+    if File.directory?(dirname) && !@options[:force]
+      say("#{dirname} folder is not empty. Use the --force flag to overwrite.")
+      return false
+    end
 
     FileUtils.rm_rf(dirname)
-    Dir.mkdir(dirname)
+    FileUtils.mkdir_p(dirname)
+    true
   end
 
   def self.copy_templates(dest)
