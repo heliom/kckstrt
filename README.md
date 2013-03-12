@@ -18,6 +18,10 @@ See a generated app example: [kckstrt-hello-world][helloworld]
 - Sprockets ([Stylus][] & [Nib][] enabled)
 - [Assets helpers][helpers]
 
+## Todo
+- `[ ]` Add CSS preprocessors (Sass/SCSS, Less)
+- `[ ]` Add HTML template engines (Haml)
+
 ## Credits
 [Rafael][rafBM] & [Etienne][EtienneLem]
 
